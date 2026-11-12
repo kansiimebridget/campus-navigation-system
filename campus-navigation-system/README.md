@@ -7,7 +7,7 @@ BCS 2105 Data Structures and Algorithms, Mountains of the Moon University (Novem
 |-----|------|---------------------|
 | 1 | Kansiime Bridget | 2025/U/MMU/BCS/01600 |
 | 2 | Tabisa Azidah | 2025/U/MMU/BCS/01708 |
-| 3 | Joseph Istivan | [Reg. no. 3] |
+| 3 | Joseph Istivan | 2025/U/MMU/BCS/00065 |
 
 ## Requirements
 Python 3.10 or newer. Standard library only (see `requirements.txt`).
