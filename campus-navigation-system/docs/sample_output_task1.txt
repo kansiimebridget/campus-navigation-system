@@ -1,0 +1,12 @@
+pairs (n^2 loop): 14  pairs (fast): 14
+append | capacity-after | running copies
+     1 |              1 | 0
+     2 |              2 | 1
+     3 |              4 | 3
+     4 |              4 | 3
+     5 |              8 | 7
+     6 |              8 | 7
+     7 |              8 | 7
+     8 |              8 | 7
+operations for 8 appends: 15 (bound 3n = 24 )
+worst-case list scan: 0.265 us   own hash table: 0.515 us  (13 buildings)

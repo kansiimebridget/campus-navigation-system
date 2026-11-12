@@ -1,0 +1,68 @@
+>> 9 Show graph
+Adjacency list (neighbour, minutes):
+  GATE  ->  (ADM, 3), (LIB, 4), (CAF, 7)
+  ADM   ->  (GATE, 3), (LIB, 2), (LT1, 5)
+  LIB   ->  (GATE, 4), (ADM, 2), (ANX, 2), (CAF, 3), (LT1, 4)
+  ANX   ->  (LIB, 2), (LT2, 3)
+  LT1   ->  (ADM, 5), (LIB, 4), (LT2, 2)
+  LT2   ->  (LT1, 2), (LT3, 3), (ANX, 3)
+  LT3   ->  (LT2, 3), (LT4, 2), (CAF, 4)
+  LT4   ->  (LT3, 2)
+  CAF   ->  (GATE, 7), (LIB, 3), (LT3, 4), (SPC, 6), (HST1, 5)
+  SPC   ->  (CAF, 6), (HST3, 4)
+  HST1  ->  (CAF, 5), (HST2, 2)
+  HST2  ->  (HST1, 2), (HST3, 2)
+  HST3  ->  (HST2, 2), (SPC, 4)
+Adjacency matrix (minutes, 0 = no direct path):
+      GATE  ADM  LIB  ANX  LT1  LT2  LT3  LT4  CAF  SPC HST1 HST2 HST3
+  GATE   0    3    4    0    0    0    0    0    7    0    0    0    0
+  ADM    3    0    2    0    5    0    0    0    0    0    0    0    0
+  LIB    4    2    0    2    4    0    0    0    3    0    0    0    0
+  ANX    0    0    2    0    0    3    0    0    0    0    0    0    0
+  LT1    0    5    4    0    0    2    0    0    0    0    0    0    0
+  LT2    0    0    0    3    2    0    3    0    0    0    0    0    0
+  LT3    0    0    0    0    0    3    0    2    4    0    0    0    0
+  LT4    0    0    0    0    0    0    2    0    0    0    0    0    0
+  CAF    7    0    3    0    0    0    4    0    0    6    5    0    0
+  SPC    0    0    0    0    0    0    0    0    6    0    0    0    4
+  HST1   0    0    0    0    0    0    0    0    5    0    0    2    0
+  HST2   0    0    0    0    0    0    0    0    0    0    2    0    2
+  HST3   0    0    0    0    0    0    0    0    0    4    0    2    0
+
+>> 10 DFS / BFS from GATE
+DFS: GATE ADM LIB ANX LT2 LT1 LT3 LT4 CAF SPC HST3 HST2 HST1
+BFS: GATE ADM LIB CAF LT1 ANX LT3 SPC HST1 LT2 LT4 HST3 HST2
+
+>> 1 Route GATE -> HST3
+Route: GATE -> CAF -> HST1 -> HST2 -> HST3 (16 min)
+>> 1 Route GATE -> LT4
+Route: GATE -> CAF -> LT3 -> LT4 (13 min)
+>> 1 Route LT4 -> SPC
+Route: LT4 -> LT3 -> CAF -> SPC (12 min)
+
+>> 2 Look up LT3-301 / ANX-S1 / XYZ-9
+LT3-301 is in Lecture Theatre 3 (LT3)
+ANX-S1 is in Library Annex (ANX)
+Not found.
+
+>> 3 BST listing and range
+Buildings (BST inorder): ADM, ANX, CAF, GATE, HST1, HST2, HST3, LIB, LT1, LT2, LT3, LT4, SPC
+Codes between ANX and HST3: ANX, CAF, GATE, HST1, HST2, HST3
+
+>> 4 Top 3 busiest
+Top 3 busiest locations (min-heap of size 3):
+  1. GATE  Main Gate and Shuttle Stop   1100 visitors/day
+  2. LIB   Main Library                 910 visitors/day
+  3. CAF   Cafeteria                    870 visitors/day
+
+>> 5 History, then Back x2
+History (oldest to newest): ['HST3', 'LT4', 'SPC']
+Back from SPC; now at LT4
+Back from LT4; now at HST3
+
+>> Shuttle queue
+Asha joined the shuttle queue. Waiting: ['Asha']
+Brian joined the shuttle queue. Waiting: ['Asha', 'Brian']
+Cathy joined the shuttle queue. Waiting: ['Asha', 'Brian', 'Cathy']
+Asha boards. Waiting: ['Brian', 'Cathy']
+Brian boards. Waiting: ['Cathy']

@@ -1,0 +1,21 @@
+insertion sort trace:
+[11, 12, 13, 5, 6]
+[11, 12, 13, 5, 6]
+[5, 11, 12, 13, 6]
+[5, 6, 11, 12, 13]
+merge sort: [5, 6, 11, 12, 13]
+quick sort: [5, 6, 11, 12, 13]
+binary search 12 in [5,6,11,12,13]: 3
+key  22: home  0 slot  0 probes 1
+key  41: home  8 slot  8 probes 1
+key  53: home  9 slot  9 probes 1
+key  46: home  2 slot  2 probes 1
+key  30: home  8 slot 10 probes 3
+key  13: home  2 slot  3 probes 2
+key   1: home  1 slot  1 probes 1
+key  67: home  1 slot  4 probes 4
+linear table: [22, 1, 46, 13, 67, None, None, None, 41, 53, 30] total probes 14
+chains: [(0, [22]), (1, [1, 67]), (2, [46, 13]), (8, [41, 30]), (9, [53])]
+search 67: linear probes 4, chaining steps 2
+double hashing table: [22, 1, 46, 13, 67, None, None, 30, 41, 53, None]
+string table lookup: LIB None

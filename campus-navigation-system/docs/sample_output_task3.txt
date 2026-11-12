@@ -1,0 +1,6 @@
+stops: ['ADM', 'GATE', 'LIB', 'CAF']
+after delete LIB: ['ADM', 'GATE', 'CAF']
+cycle in plain list? False
+cycle after linking last to second? True
+loop, 6 steps: ['GATE', 'LIB', 'CAF', 'HST1', 'GATE', 'LIB']
+after delete CAF, 5 steps: ['GATE', 'LIB', 'HST1', 'GATE', 'LIB']

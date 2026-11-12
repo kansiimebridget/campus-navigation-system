@@ -1,0 +1,14 @@
+history (limit 3): ['LIB', 'CAF'] | back -> LT1 | now on CAF
+shuttle queue: ['Asha', 'Brian', 'Cathy'] | boards: Asha | waiting: ['Brian', 'Cathy']
+  A | stack [] | output ['A']
+  + | stack ['+'] | output ['A']
+  B | stack ['+'] | output ['A', 'B']
+  * | stack ['+', '*'] | output ['A', 'B']
+  C | stack ['+', '*'] | output ['A', 'B', 'C']
+  - | stack ['-'] | output ['A', 'B', 'C', '*', '+']
+  D | stack ['-'] | output ['A', 'B', 'C', '*', '+', 'D']
+  / | stack ['-', '/'] | output ['A', 'B', 'C', '*', '+', 'D']
+  E | stack ['-', '/'] | output ['A', 'B', 'C', '*', '+', 'D', 'E']
+end | stack [] | output ['A', 'B', 'C', '*', '+', 'D', 'E', '/', '-']
+A + B * C - D / E -> A B C * + D E / -
+[True, True, True, False] a True ['d', 'b', 'c']
